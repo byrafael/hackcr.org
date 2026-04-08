@@ -1,3 +1,4 @@
+import { Bell } from "lucide-react";
 import { Link } from "react-router-dom";
 
 interface HomeNavigationProps {
@@ -26,38 +27,42 @@ export function HomeNavigation({ scrollY, onOpenNotify }: HomeNavigationProps) {
       }}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <Link to="/" className="font-display text-2xl font-bold tracking-tight text-[#ff9f1c]">
+        <Link to="/" className="font-display text-2xl font-bold tracking-tight text-[#00f5d4]">
           hackcr
         </Link>
         <div className="hidden md:flex items-center gap-8">
           <button
             type="button"
             onClick={() => scrollToSection("about")}
-            className="text-sm font-display uppercase tracking-wider text-[#f8f9fa]/50 hover:text-[#ff9f1c] transition-colors duration-300"
+            className="text-sm font-display uppercase tracking-wider text-[#f8f9fa]/50 hover:text-[#00f5d4] transition-colors duration-300"
           >
             About
           </button>
           <button
             type="button"
             onClick={() => scrollToSection("sponsors")}
-            className="text-sm font-display uppercase tracking-wider text-[#f8f9fa]/50 hover:text-[#ff9f1c] transition-colors duration-300"
+            className="text-sm font-display uppercase tracking-wider text-[#f8f9fa]/50 hover:text-[#00f5d4] transition-colors duration-300"
           >
             Sponsors
           </button>
           <button
             type="button"
             onClick={() => scrollToSection("faq")}
-            className="text-sm font-display uppercase tracking-wider text-[#f8f9fa]/50 hover:text-[#ff9f1c] transition-colors duration-300"
+            className="text-sm font-display uppercase tracking-wider text-[#f8f9fa]/50 hover:text-[#00f5d4] transition-colors duration-300"
           >
             FAQ
           </button>
           <Link
             to="/team"
-            className="text-sm font-display uppercase tracking-wider text-[#f8f9fa]/50 hover:text-[#ff9f1c] transition-colors duration-300"
+            className="text-sm font-display uppercase tracking-wider text-[#f8f9fa]/50 hover:text-[#00f5d4] transition-colors duration-300"
           >
             Team
           </Link>
-          <button onClick={onOpenNotify} className="btn-primary px-6 py-2 text-sm">
+          <button
+            onClick={onOpenNotify}
+            className="btn-primary px-6 py-2 text-sm inline-flex items-center gap-2"
+          >
+            <Bell className="w-3.5 h-3.5" />
             Get Notified
           </button>
         </div>

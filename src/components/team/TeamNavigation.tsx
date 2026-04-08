@@ -14,20 +14,20 @@ export function TeamNavigation({ scrollY }: TeamNavigationProps) {
       }}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <Link to="/" className="font-display text-2xl font-bold tracking-tight text-[#ff9f1c]">
+        <Link to="/" className="font-display text-2xl font-bold tracking-tight text-[#00f5d4]">
           hackcr
         </Link>
         <div className="hidden md:flex items-center gap-8">
           <Link
             to="/"
-            className="text-sm font-display uppercase tracking-wider text-[#f8f9fa]/50 hover:text-[#ff9f1c] transition-colors duration-300"
+            className="text-sm font-display uppercase tracking-wider text-[#f8f9fa]/50 hover:text-[#00f5d4] transition-colors duration-300"
           >
             Home
           </Link>
-          <span className="text-sm font-display uppercase tracking-wider text-[#ff9f1c]">Team</span>
+          <span className="text-sm font-display uppercase tracking-wider text-[#00f5d4]">Team</span>
           <Link
             to="/code-of-conduct"
-            className="text-sm font-display uppercase tracking-wider text-[#f8f9fa]/50 hover:text-[#ff9f1c] transition-colors duration-300"
+            className="text-sm font-display uppercase tracking-wider text-[#f8f9fa]/50 hover:text-[#00f5d4] transition-colors duration-300"
           >
             Code of Conduct
           </Link>

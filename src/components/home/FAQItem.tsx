@@ -12,10 +12,10 @@ export function FAQItem({ question, answer, isOpen, onClick }: FAQItemProps) {
         onClick={onClick}
         className="w-full py-6 flex items-center justify-between text-left group"
       >
-        <span className="font-display text-lg md:text-xl font-medium text-[#f8f9fa] group-hover:text-[#ff9f1c] transition-colors duration-300 pr-4">
+        <span className="font-display text-lg md:text-xl font-medium text-[#f8f9fa] group-hover:text-[#00f5d4] transition-colors duration-300 pr-4">
           {question}
         </span>
-        <span className={`faq-icon text-2xl text-[#ff9f1c] ${isOpen ? "open" : ""}`}>+</span>
+        <span className={`faq-icon text-2xl text-[#00f5d4] ${isOpen ? "open" : ""}`}>+</span>
       </button>
       <div className={`faq-content ${isOpen ? "open" : ""}`}>
         <div>

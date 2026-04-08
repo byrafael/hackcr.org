@@ -9,7 +9,7 @@ export function SiteFooter() {
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row md:justify-between gap-12 mb-16">
           <div>
-            <div className="font-display text-3xl font-bold tracking-tight mb-4 text-[#ff9f1c]">
+            <div className="font-display text-3xl font-bold tracking-tight mb-4 text-[#00f5d4]">
               hackcr
             </div>
             <p className="text-[#f8f9fa]/40 max-w-sm mb-6">
@@ -52,7 +52,7 @@ export function SiteFooter() {
                 <li>
                   <a
                     href="/apply/mentor"
-                    className="text-[#f8f9fa]/30 hover:text-[#ff9f1c] transition-colors duration-300"
+                    className="text-[#f8f9fa]/30 hover:text-[#00f5d4] transition-colors duration-300"
                   >
                     Become a Mentor
                   </a>
@@ -60,7 +60,7 @@ export function SiteFooter() {
                 <li>
                   <a
                     href="/apply/judge"
-                    className="text-[#f8f9fa]/30 hover:text-[#ff9f1c] transition-colors duration-300"
+                    className="text-[#f8f9fa]/30 hover:text-[#00f5d4] transition-colors duration-300"
                   >
                     Become a Judge
                   </a>
@@ -68,7 +68,7 @@ export function SiteFooter() {
                 <li>
                   <a
                     href="/apply"
-                    className="text-[#f8f9fa]/30 hover:text-[#ff9f1c] transition-colors duration-300"
+                    className="text-[#f8f9fa]/30 hover:text-[#00f5d4] transition-colors duration-300"
                   >
                     Volunteer
                   </a>
@@ -83,7 +83,7 @@ export function SiteFooter() {
                 {/* <li>
                   <a
                     href="#"
-                    className="text-[#f8f9fa]/30 hover:text-[#ff9f1c] transition-colors duration-300"
+                    className="text-[#f8f9fa]/30 hover:text-[#00f5d4] transition-colors duration-300"
                   >
                     Student Agreement
                   </a>
@@ -91,7 +91,7 @@ export function SiteFooter() {
                 <li>
                   <Link
                     to="/code-of-conduct"
-                    className="text-[#f8f9fa]/30 hover:text-[#ff9f1c] transition-colors duration-300"
+                    className="text-[#f8f9fa]/30 hover:text-[#00f5d4] transition-colors duration-300"
                   >
                     Code of Conduct
                   </Link>
@@ -99,7 +99,7 @@ export function SiteFooter() {
                 <li>
                   <a
                     href="/terms"
-                    className="text-[#f8f9fa]/30 hover:text-[#ff9f1c] transition-colors duration-300"
+                    className="text-[#f8f9fa]/30 hover:text-[#00f5d4] transition-colors duration-300"
                   >
                     Terms of Service
                   </a>
@@ -107,7 +107,7 @@ export function SiteFooter() {
                 <li>
                   <a
                     href="/privacy"
-                    className="text-[#f8f9fa]/30 hover:text-[#ff9f1c] transition-colors duration-300"
+                    className="text-[#f8f9fa]/30 hover:text-[#00f5d4] transition-colors duration-300"
                   >
                     Privacy Policy
                   </a>

@@ -7,10 +7,10 @@
 
   --color-void: #0c0c10;
   --color-void-light: #15151c;
-  --color-amber: #ff9f1c;
-  --color-amber-dark: #e8850c;
-  --color-rose: #e71d36;
-  --color-violet: #9d4edd;
+  --color-cyber: #00f5d4;
+  --color-cyber-dark: #00d4b5;
+  --color-matrix: #39ff14;
+  --color-violet: #b967ff;
   --color-cream: #f8f9fa;
 }
 
@@ -39,7 +39,7 @@
   }
 
   ::selection {
-    background: var(--color-amber);
+    background: var(--color-cyber);
     color: var(--color-void);
   }
 }
@@ -58,7 +58,7 @@
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-amber);
+  background: var(--color-cyber);
 }
 
 @keyframes float {
@@ -114,7 +114,7 @@
 }
 
 .animate-shimmer {
-  background: linear-gradient(90deg, transparent, rgba(255, 159, 28, 0.1), transparent);
+  background: linear-gradient(90deg, transparent, rgba(0, 245, 212, 0.1), transparent);
   background-size: 200% 100%;
   animation: shimmer 3s infinite;
 }
@@ -136,7 +136,7 @@
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, var(--color-amber) 0%, var(--color-rose) 100%);
+  background: linear-gradient(135deg, var(--color-cyber) 0%, var(--color-matrix) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -149,7 +149,7 @@
 }
 
 .btn-primary {
-  background: var(--color-amber);
+  background: #00b8a9;
   color: var(--color-void);
   font-family: var(--font-display);
   font-weight: 600;
@@ -160,7 +160,7 @@
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(255, 159, 28, 0.3);
+  box-shadow: 0 8px 30px rgba(0, 184, 169, 0.3);
 }
 
 .btn-secondary {
@@ -174,8 +174,8 @@
 }
 
 .btn-secondary:hover {
-  border-color: var(--color-amber);
-  color: var(--color-amber);
+  border-color: var(--color-cyber);
+  color: var(--color-cyber);
 }
 
 .reveal {
@@ -239,11 +239,11 @@
 
 .terminal-body {
   padding: 20px;
-  color: var(--color-amber);
+  color: var(--color-cyber);
 }
 
 .terminal-prompt {
-  color: var(--color-rose);
+  color: var(--color-matrix);
 }
 
 .scanlines {
@@ -259,14 +259,14 @@
     0deg,
     transparent,
     transparent 2px,
-    rgba(255, 159, 28, 0.02) 2px,
-    rgba(255, 159, 28, 0.02) 4px
+    rgba(0, 245, 212, 0.02) 2px,
+    rgba(0, 245, 212, 0.02) 4px
   );
 }
 
 .grid-bg {
   background-image:
-    linear-gradient(rgba(255, 159, 28, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 159, 28, 0.03) 1px, transparent 1px);
+    linear-gradient(rgba(0, 245, 212, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 245, 212, 0.03) 1px, transparent 1px);
   background-size: 60px 60px;
 }

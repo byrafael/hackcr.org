@@ -36,7 +36,7 @@ export function FAQSection() {
     <section id="faq" className="relative py-32 md:py-40 px-6 border-t border-white/5">
       <div className="max-w-3xl mx-auto">
         <div className="mb-16 reveal">
-          <span className="font-mono text-xs uppercase tracking-[0.3em] text-[#ff9f1c]">
+          <span className="font-mono text-xs uppercase tracking-[0.3em] text-[#00f5d4]">
             05 / FAQ
           </span>
           <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mt-6">

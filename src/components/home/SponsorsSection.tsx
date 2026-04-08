@@ -1,9 +1,11 @@
+import { HeartHandshake } from "lucide-react";
+
 export function SponsorsSection() {
   return (
     <section id="sponsors" className="relative py-32 md:py-40 px-6 border-t border-white/5">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16 reveal">
-          <span className="font-mono text-xs uppercase tracking-[0.3em] text-[#9d4edd]">
+          <span className="font-mono text-xs uppercase tracking-[0.3em] text-[#b967ff]">
             04 / Sponsors
           </span>
           <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mt-6">
@@ -24,7 +26,11 @@ export function SponsorsSection() {
               Help us make HackCR 2026 unforgettable. Partner with Costa Rica&apos;s first high
               school hackathon and connect with the next generation of builders.
             </p>
-            <a href="mailto:sponsor@hackcr.org" className="btn-primary px-8 py-4 inline-block">
+            <a
+              href="mailto:sponsor@hackcr.org"
+              className="btn-primary px-8 py-4 inline-flex items-center gap-2"
+            >
+              <HeartHandshake className="w-4 h-4" />
               Become a Sponsor
             </a>
           </div>
@@ -34,7 +40,7 @@ export function SponsorsSection() {
           <div className="h-px w-12 bg-white/10" />
           <a
             href="mailto:sponsor@hackcr.org"
-            className="text-[#f8f9fa]/30 hover:text-[#ff9f1c] transition-colors text-sm font-mono"
+            className="text-[#f8f9fa]/30 hover:text-[#00f5d4] transition-colors text-sm font-mono"
           >
             sponsor@hackcr.org
           </a>

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { X, Send, CheckCircle } from "lucide-react";
+import { Check, Send, X, CheckCircle } from "lucide-react";
 
 interface NotifyModalProps {
   isOpen: boolean;
@@ -108,14 +108,18 @@ export function NotifyModal({ isOpen, onClose }: NotifyModalProps) {
 
         {isSubmitted ? (
           <div className="text-center py-8">
-            <div className="w-16 h-16 rounded-full bg-[#ff9f1c]/20 flex items-center justify-center mx-auto mb-6">
-              <CheckCircle className="w-8 h-8 text-[#ff9f1c]" />
+            <div className="w-16 h-16 rounded-full bg-[#00f5d4]/20 flex items-center justify-center mx-auto mb-6">
+              <CheckCircle className="w-8 h-8 text-[#00f5d4]" />
             </div>
             <h2 className="font-display text-2xl font-bold mb-4">You&apos;re on the list!</h2>
             <p className="text-[#f8f9fa]/60 mb-6">
               We&apos;ll notify you when registration opens. Stay tuned!
             </p>
-            <button onClick={onClose} className="btn-primary px-8 py-3">
+            <button
+              onClick={onClose}
+              className="btn-primary px-8 py-3 inline-flex items-center gap-2"
+            >
+              <Check className="w-4 h-4" />
               Got it
             </button>
           </div>
@@ -134,7 +138,7 @@ export function NotifyModal({ isOpen, onClose }: NotifyModalProps) {
                   htmlFor="name"
                   className="block text-sm font-display uppercase tracking-wider text-[#f8f9fa]/50 mb-2"
                 >
-                  Name <span className="text-[#e71d36]">*</span>
+                  Name <span className="text-[#39ff14]">*</span>
                 </label>
                 <input
                   type="text"
@@ -152,7 +156,7 @@ export function NotifyModal({ isOpen, onClose }: NotifyModalProps) {
                   htmlFor="email"
                   className="block text-sm font-display uppercase tracking-wider text-[#f8f9fa]/50 mb-2"
                 >
-                  Email <span className="text-[#e71d36]">*</span>
+                  Email <span className="text-[#39ff14]">*</span>
                 </label>
                 <input
                   type="email"
@@ -161,7 +165,7 @@ export function NotifyModal({ isOpen, onClose }: NotifyModalProps) {
                   onChange={(e) => setEmail(e.target.value)}
                   required
                   placeholder="your@email.com"
-                  className="w-full px-4 py-3 bg-[#0c0c10] border border-white/10 rounded-lg text-[#f8f9fa] placeholder:text-[#f8f9fa]/30 focus:outline-none focus:border-[#ff9f1c] transition-colors"
+                  className="w-full px-4 py-3 bg-[#0c0c10] border border-white/10 rounded-lg text-[#f8f9fa] placeholder:text-[#f8f9fa]/30 focus:outline-none focus:border-[#00f5d4] transition-colors"
                 />
               </div>
 
@@ -180,7 +184,7 @@ export function NotifyModal({ isOpen, onClose }: NotifyModalProps) {
                   placeholder="+506 1234-5678"
                   pattern="^\+?[0-9\s().-]+$"
                   title="Use digits and optional +, spaces, parentheses, dots, or dashes."
-                  className="w-full px-4 py-3 bg-[#0c0c10] border border-white/10 rounded-lg text-[#f8f9fa] placeholder:text-[#f8f9fa]/30 focus:outline-none focus:border-[#ff9f1c] transition-colors"
+                  className="w-full px-4 py-3 bg-[#0c0c10] border border-white/10 rounded-lg text-[#f8f9fa] placeholder:text-[#f8f9fa]/30 focus:outline-none focus:border-[#00f5d4] transition-colors"
                 />
               </div>
 
@@ -197,7 +201,7 @@ export function NotifyModal({ isOpen, onClose }: NotifyModalProps) {
                   value={school}
                   onChange={(e) => setSchool(e.target.value)}
                   placeholder="Your school name"
-                  className="w-full px-4 py-3 bg-[#0c0c10] border border-white/10 rounded-lg text-[#f8f9fa] placeholder:text-[#f8f9fa]/30 focus:outline-none focus:border-[#ff9f1c] transition-colors"
+                  className="w-full px-4 py-3 bg-[#0c0c10] border border-white/10 rounded-lg text-[#f8f9fa] placeholder:text-[#f8f9fa]/30 focus:outline-none focus:border-[#00f5d4] transition-colors"
                 />
               </div>
 
@@ -220,7 +224,7 @@ export function NotifyModal({ isOpen, onClose }: NotifyModalProps) {
               </button>
 
               {submitError ? (
-                <p className="text-sm text-[#e71d36] text-center" role="alert">
+                <p className="text-sm text-[#39ff14] text-center" role="alert">
                   {submitError}
                 </p>
               ) : null}
