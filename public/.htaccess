@@ -1,0 +1,40 @@
+Options -MultiViews
+RewriteEngine On
+RewriteBase /
+
+# Force HTTPS for all incoming requests.
+RewriteCond %{HTTPS} !=on
+RewriteCond %{HTTP:X-Forwarded-Proto} !https [NC]
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+# With HashRouter, these routes must resolve client-side.
+# Redirect legacy clean URLs to hash URLs so old links don't 404.
+RewriteRule ^team/?$ /#/team [R=302,L]
+RewriteRule ^code-of-conduct/?$ /#/code-of-conduct [R=302,L]
+
+# Deny direct access to the API env file, including extensionless requests.
+RewriteRule ^api/env(?:\.php)?/?$ - [F,L,NC]
+
+# Serve existing files and directories directly.
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Allow extensionless URLs for .pdf, .html, and .php files.
+RewriteCond %{REQUEST_URI} !\.[^./]+$
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.pdf -f
+RewriteRule ^(.+?)/?$ $1.pdf [L]
+
+RewriteCond %{REQUEST_URI} !\.[^./]+$
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.+?)/?$ $1.html [L]
+
+RewriteCond %{REQUEST_URI} !\.[^./]+$
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.+?)/?$ $1.php [L]
+
+# Fallback all other requests to the SPA entrypoint.
+RewriteRule ^ index.html [L]

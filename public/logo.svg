@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="bg3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0c0c10"/>
+      <stop offset="100%" style="stop-color:#1a1a24"/>
+    </linearGradient>
+    <linearGradient id="hGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff9f1c"/>
+      <stop offset="100%" style="stop-color:#e71d36"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background rounded square -->
+  <rect x="51" y="51" width="922" height="922" rx="225" fill="url(#bg3)"/>
+
+  <!-- Hexagon frame around h -->
+  <path d="M512 154 L799 307 L799 666 L512 819 L225 666 L225 307 Z"
+        fill="none"
+        stroke="#ff9f1c"
+        stroke-width="20"
+        opacity="0.5"/>
+
+  <!-- Lowercase h -->
+  <text x="512" y="655"
+        font-family="Chakra Petch, sans-serif"
+        font-size="451"
+        font-weight="700"
+        fill="url(#hGrad)"
+        text-anchor="middle">h</text>
+
+  <!-- Circuit dots at corners -->
+  <circle cx="512" cy="154" r="31" fill="#ff9f1c"/>
+  <circle cx="799" cy="307" r="31" fill="#e71d36"/>
+  <circle cx="799" cy="666" r="31" fill="#e71d36"/>
+  <circle cx="512" cy="819" r="31" fill="#ff9f1c"/>
+  <circle cx="225" cy="666" r="31" fill="#e71d36"/>
+  <circle cx="225" cy="307" r="31" fill="#ff9f1c"/>
+</svg>
