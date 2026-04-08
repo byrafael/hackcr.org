@@ -8,7 +8,7 @@ export default function CodeOfConduct() {
   const scrollY = useScrollY();
 
   return (
-    <div className="min-h-screen bg-[#0c0c10] text-[#f8f9fa] overflow-x-hidden">
+    <div className="min-h-screen bg-void text-cream overflow-x-hidden">
       <div className="scanlines" />
 
       <CocNavigation scrollY={scrollY} />

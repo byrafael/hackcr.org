@@ -12,20 +12,20 @@ interface TeamMemberCircleProps {
 const sizeConfig = {
   large: {
     buttonClassName:
-      "w-32 h-32 md:w-40 md:h-40 rounded-full mb-4 flex items-center justify-center text-3xl md:text-4xl font-display font-bold text-[#0c0c10] mx-auto transition-transform duration-300 group-hover:scale-105",
+      "w-32 h-32 md:w-40 md:h-40 rounded-full mb-4 flex items-center justify-center text-3xl md:text-4xl font-display font-bold text-void mx-auto transition-transform duration-300 group-hover:scale-105",
     titleClassName: "font-display text-lg md:text-xl font-bold",
     subtitleClassName: "text-xs md:text-sm font-mono uppercase tracking-wider",
   },
   medium: {
     buttonClassName:
-      "w-20 h-20 md:w-24 md:h-24 rounded-full mb-3 flex items-center justify-center text-xl md:text-2xl font-display font-bold text-[#0c0c10] mx-auto transition-transform duration-300 group-hover:scale-105",
+      "w-20 h-20 md:w-24 md:h-24 rounded-full mb-3 flex items-center justify-center text-xl md:text-2xl font-display font-bold text-void mx-auto transition-transform duration-300 group-hover:scale-105",
     titleClassName: "font-display text-sm md:text-base font-bold",
     subtitleClassName: "text-xs font-mono uppercase tracking-wider",
   },
   small: {
     buttonClassName:
-      "w-14 h-14 md:w-16 md:h-16 rounded-full mb-2 flex items-center justify-center text-sm md:text-base font-display font-bold text-[#0c0c10] mx-auto transition-transform duration-300 group-hover:scale-105",
-    titleClassName: "text-xs font-mono text-[#f8f9fa]/40",
+      "w-14 h-14 md:w-16 md:h-16 rounded-full mb-2 flex items-center justify-center text-sm md:text-base font-display font-bold text-void mx-auto transition-transform duration-300 group-hover:scale-105",
+    titleClassName: "text-xs font-mono text-cream/40",
     subtitleClassName: "",
   },
 } as const;

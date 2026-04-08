@@ -27,34 +27,34 @@ export function HomeNavigation({ scrollY, onOpenNotify }: HomeNavigationProps) {
       }}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <Link to="/" className="font-display text-2xl font-bold tracking-tight text-[#00f5d4]">
+        <Link to="/" className="font-display text-2xl font-bold tracking-tight text-cyber">
           hackcr
         </Link>
         <div className="hidden md:flex items-center gap-8">
           <button
             type="button"
             onClick={() => scrollToSection("about")}
-            className="text-sm font-display uppercase tracking-wider text-[#f8f9fa]/50 hover:text-[#00f5d4] transition-colors duration-300"
+            className="text-sm font-display uppercase tracking-wider text-cream/50 hover:text-cyber transition-colors duration-300"
           >
             About
           </button>
           <button
             type="button"
             onClick={() => scrollToSection("sponsors")}
-            className="text-sm font-display uppercase tracking-wider text-[#f8f9fa]/50 hover:text-[#00f5d4] transition-colors duration-300"
+            className="text-sm font-display uppercase tracking-wider text-cream/50 hover:text-cyber transition-colors duration-300"
           >
             Sponsors
           </button>
           <button
             type="button"
             onClick={() => scrollToSection("faq")}
-            className="text-sm font-display uppercase tracking-wider text-[#f8f9fa]/50 hover:text-[#00f5d4] transition-colors duration-300"
+            className="text-sm font-display uppercase tracking-wider text-cream/50 hover:text-cyber transition-colors duration-300"
           >
             FAQ
           </button>
           <Link
             to="/team"
-            className="text-sm font-display uppercase tracking-wider text-[#f8f9fa]/50 hover:text-[#00f5d4] transition-colors duration-300"
+            className="text-sm font-display uppercase tracking-wider text-cream/50 hover:text-cyber transition-colors duration-300"
           >
             Team
           </Link>

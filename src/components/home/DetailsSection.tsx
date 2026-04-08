@@ -42,7 +42,7 @@ export function DetailsSection() {
     <section id="details" className="relative py-32 md:py-40 px-6 border-t border-white/5">
       <div className="max-w-7xl mx-auto">
         <div className="mb-16 reveal">
-          <span className="font-mono text-xs uppercase tracking-[0.3em] text-[#00f5d4]">
+          <span className="font-mono text-xs uppercase tracking-[0.3em] text-cyber">
             03 / Details
           </span>
           <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mt-6">
@@ -54,7 +54,7 @@ export function DetailsSection() {
           {details.map((item, index) => (
             <div
               key={item.title}
-              className="bg-[#0c0c10] p-8 hover:bg-[#15151c] transition-colors reveal"
+              className="bg-void p-8 hover:bg-void-light transition-colors reveal"
               style={{ transitionDelay: `${index * 50}ms` }}
             >
               <div
@@ -64,7 +64,7 @@ export function DetailsSection() {
                 {item.title}
               </div>
               <h3 className="font-display text-2xl font-bold mb-2">{item.desc}</h3>
-              <p className="text-[#f8f9fa]/40 text-sm">{item.sub}</p>
+              <p className="text-cream/40 text-sm">{item.sub}</p>
             </div>
           ))}
         </div>

@@ -21,14 +21,14 @@ function CodeSection({ icon, title, children, accentColor = "#00f5d4" }: CodeSec
     <div className="glass-card rounded-xl p-8 md:p-10 transition-all duration-300 hover:border-white/10">
       <div className="flex items-start gap-6">
         <div
-          className="flex-shrink-0 w-12 h-12 rounded-lg flex items-center justify-center"
+          className="shrink-0 w-12 h-12 rounded-lg flex items-center justify-center"
           style={{ background: `rgba(0, 245, 212, 0.1)`, color: accentColor }}
         >
           {icon}
         </div>
         <div className="flex-1">
           <h2 className="font-display text-2xl md:text-3xl font-bold mb-4">{title}</h2>
-          <div className="text-[#f8f9fa]/70 leading-relaxed space-y-4">{children}</div>
+          <div className="text-cream/70 leading-relaxed space-y-4">{children}</div>
         </div>
       </div>
     </div>
@@ -42,23 +42,23 @@ export function CocContentSection() {
         {/* Introduction Card */}
         <div className="relative mb-16">
           {/* Gradient border effect */}
-          <div className="absolute -inset-[1px] bg-gradient-to-r from-[#00f5d4] via-[#39ff14] to-[#b967ff] rounded-2xl opacity-30" />
+          <div className="absolute -inset-px bg-linear-to-r from-cyber via-matrix to-violet rounded-2xl opacity-30" />
           <div className="relative glass-card rounded-2xl p-8 md:p-12">
             <div className="flex flex-col items-center text-center">
-              <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-[#00f5d4]/20 to-[#39ff14]/20 flex items-center justify-center mb-6">
-                <Sparkles className="w-8 h-8 text-[#00f5d4]" />
+              <div className="w-16 h-16 rounded-xl bg-linear-to-br from-cyber/20 to-matrix/20 flex items-center justify-center mb-6">
+                <Sparkles className="w-8 h-8 text-cyber" />
               </div>
               <h2 className="font-display text-2xl md:text-3xl font-bold mb-6">
                 A Safe Space for Everyone
               </h2>
-              <p className="text-lg text-[#f8f9fa]/70 max-w-2xl leading-relaxed mb-8">
+              <p className="text-lg text-cream/70 max-w-2xl leading-relaxed mb-8">
                 Hack Costa Rica is dedicated to providing a harassment-free experience for everyone.
                 We welcome participants from all backgrounds and identities.
               </p>
 
               {/* Protected Characteristics Grid */}
               <div className="w-full">
-                <p className="text-sm font-mono uppercase tracking-wider text-[#f8f9fa]/40 mb-4">
+                <p className="text-sm font-mono uppercase tracking-wider text-cream/40 mb-4">
                   This includes, but is not limited to
                 </p>
                 <div className="flex flex-wrap justify-center gap-2 md:gap-3">
@@ -78,7 +78,7 @@ export function CocContentSection() {
                   ].map((item) => (
                     <span
                       key={item}
-                      className="px-4 py-2 rounded-full text-sm font-medium bg-[#00f5d4]/10 text-[#00f5d4] border border-[#00f5d4]/20 hover:bg-[#00f5d4]/20 transition-colors duration-300"
+                      className="px-4 py-2 rounded-full text-sm font-medium bg-cyber/10 text-cyber border border-cyber/20 hover:bg-cyber/20 transition-colors duration-300"
                     >
                       {item}
                     </span>
@@ -98,19 +98,19 @@ export function CocContentSection() {
             </p>
             <ul className="space-y-2 mt-4 list-disc list-inside">
               <li>
-                <strong className="text-[#f8f9fa]">Inclusivity:</strong> Everyone has something
-                valuable to contribute, regardless of experience level.
+                <strong className="text-cream">Inclusivity:</strong> Everyone has something valuable
+                to contribute, regardless of experience level.
               </li>
               <li>
-                <strong className="text-[#f8f9fa]">Respect:</strong> Treat all participants,
-                mentors, judges, and organizers with kindness and professionalism.
+                <strong className="text-cream">Respect:</strong> Treat all participants, mentors,
+                judges, and organizers with kindness and professionalism.
               </li>
               <li>
-                <strong className="text-[#f8f9fa]">Collaboration:</strong> Help others learn and
-                grow while working together toward common goals.
+                <strong className="text-cream">Collaboration:</strong> Help others learn and grow
+                while working together toward common goals.
               </li>
               <li>
-                <strong className="text-[#f8f9fa]">Integrity:</strong> Be honest in your work and
+                <strong className="text-cream">Integrity:</strong> Be honest in your work and
                 respectful of others&apos; intellectual property.
               </li>
             </ul>
@@ -183,7 +183,7 @@ export function CocContentSection() {
               email at any time, at{" "}
               <a
                 href="mailto:conduct@hackcr.org"
-                className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-[#00f5d4]/10 border border-[#00f5d4]/30 text-[#00f5d4] font-mono text-xs hover:bg-[#00f5d4]/20 hover:border-[#00f5d4]/50 transition-all duration-300"
+                className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-cyber/10 border border-cyber/30 text-cyber font-mono text-xs hover:bg-cyber/20 hover:border-cyber/50 transition-all duration-300"
               >
                 conduct@hackcr.org
               </a>
@@ -230,15 +230,15 @@ export function CocContentSection() {
         {/* Contact Section */}
         <div className="mt-6 text-center">
           <div className="glass-card rounded-xl p-8 md:p-12">
-            <Mail className="w-12 h-12 text-[#00f5d4] mx-auto mb-6" />
+            <Mail className="w-12 h-12 text-cyber mx-auto mb-6" />
             <h3 className="font-display text-2xl font-bold mb-4">Questions or Concerns?</h3>
-            <p className="text-[#f8f9fa]/60 mb-6 max-w-lg mx-auto">
+            <p className="text-cream/60 mb-6 max-w-lg mx-auto">
               If you have any questions about this Code of Conduct, or need to report an incident,
               please don&apos;t hesitate to reach out to our team.
             </p>
             <a
               href="mailto:conduct@hackcr.org"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[#00f5d4]/10 border border-[#00f5d4]/30 text-[#00f5d4] font-mono text-sm tracking-wide hover:bg-[#00f5d4]/20 hover:border-[#00f5d4]/50 hover:scale-[1.02] transition-all duration-300"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-cyber/10 border border-cyber/30 text-cyber font-mono text-sm tracking-wide hover:bg-cyber/20 hover:border-cyber/50 hover:scale-[1.02] transition-all duration-300"
             >
               <Mail className="w-4 h-4" />
               conduct@hackcr.org
@@ -248,7 +248,7 @@ export function CocContentSection() {
 
         {/* Last Updated */}
         <div className="mt-6 text-center">
-          <p className="text-sm text-[#f8f9fa]/30 font-mono">Last updated: April 7th, 2026</p>
+          <p className="text-sm text-cream/30 font-mono">Last updated: April 7th, 2026</p>
         </div>
       </div>
     </section>

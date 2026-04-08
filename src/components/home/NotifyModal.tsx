@@ -92,7 +92,7 @@ export function NotifyModal({ isOpen, onClose }: NotifyModalProps) {
   }
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4" onClick={onClose}>
+    <div className="fixed inset-0 z-100 flex items-center justify-center p-4" onClick={onClose}>
       <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
 
       <div
@@ -101,18 +101,18 @@ export function NotifyModal({ isOpen, onClose }: NotifyModalProps) {
       >
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-[#f8f9fa]/40 hover:text-[#f8f9fa] transition-colors"
+          className="absolute top-4 right-4 text-cream/40 hover:text-cream transition-colors"
         >
           <X className="w-6 h-6" />
         </button>
 
         {isSubmitted ? (
           <div className="text-center py-8">
-            <div className="w-16 h-16 rounded-full bg-[#00f5d4]/20 flex items-center justify-center mx-auto mb-6">
-              <CheckCircle className="w-8 h-8 text-[#00f5d4]" />
+            <div className="w-16 h-16 rounded-full bg-cyber/20 flex items-center justify-center mx-auto mb-6">
+              <CheckCircle className="w-8 h-8 text-cyber" />
             </div>
             <h2 className="font-display text-2xl font-bold mb-4">You&apos;re on the list!</h2>
-            <p className="text-[#f8f9fa]/60 mb-6">
+            <p className="text-cream/60 mb-6">
               We&apos;ll notify you when registration opens. Stay tuned!
             </p>
             <button
@@ -127,18 +127,16 @@ export function NotifyModal({ isOpen, onClose }: NotifyModalProps) {
           <>
             <div className="text-center mb-8">
               <h2 className="font-display text-2xl font-bold mb-2">Get Notified</h2>
-              <p className="text-[#f8f9fa]/60 text-sm">
-                Be the first to know when registration opens.
-              </p>
+              <p className="text-cream/60 text-sm">Be the first to know when registration opens.</p>
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <label
                   htmlFor="name"
-                  className="block text-sm font-display uppercase tracking-wider text-[#f8f9fa]/50 mb-2"
+                  className="block text-sm font-display uppercase tracking-wider text-cream/50 mb-2"
                 >
-                  Name <span className="text-[#39ff14]">*</span>
+                  Name <span className="text-matrix">*</span>
                 </label>
                 <input
                   type="text"
@@ -147,16 +145,16 @@ export function NotifyModal({ isOpen, onClose }: NotifyModalProps) {
                   onChange={(e) => setName(e.target.value)}
                   required
                   placeholder="Your full name"
-                  className="w-full px-4 py-3 bg-[#0c0c10] border border-white/10 rounded-lg text-[#f8f9fa] placeholder:text-[#f8f9fa]/30 focus:outline-none focus:border-[#ff9f1c] transition-colors"
+                  className="w-full px-4 py-3 bg-void border border-white/10 rounded-lg text-cream placeholder:text-cream/30 focus:outline-none focus:border-amber transition-colors"
                 />
               </div>
 
               <div>
                 <label
                   htmlFor="email"
-                  className="block text-sm font-display uppercase tracking-wider text-[#f8f9fa]/50 mb-2"
+                  className="block text-sm font-display uppercase tracking-wider text-cream/50 mb-2"
                 >
-                  Email <span className="text-[#39ff14]">*</span>
+                  Email <span className="text-matrix">*</span>
                 </label>
                 <input
                   type="email"
@@ -165,16 +163,16 @@ export function NotifyModal({ isOpen, onClose }: NotifyModalProps) {
                   onChange={(e) => setEmail(e.target.value)}
                   required
                   placeholder="your@email.com"
-                  className="w-full px-4 py-3 bg-[#0c0c10] border border-white/10 rounded-lg text-[#f8f9fa] placeholder:text-[#f8f9fa]/30 focus:outline-none focus:border-[#00f5d4] transition-colors"
+                  className="w-full px-4 py-3 bg-void border border-white/10 rounded-lg text-cream placeholder:text-cream/30 focus:outline-none focus:border-cyber transition-colors"
                 />
               </div>
 
               <div>
                 <label
                   htmlFor="phone"
-                  className="block text-sm font-display uppercase tracking-wider text-[#f8f9fa]/50 mb-2"
+                  className="block text-sm font-display uppercase tracking-wider text-cream/50 mb-2"
                 >
-                  Phone <span className="text-[#f8f9fa]/30">(optional)</span>
+                  Phone <span className="text-cream/30">(optional)</span>
                 </label>
                 <input
                   type="tel"
@@ -184,16 +182,16 @@ export function NotifyModal({ isOpen, onClose }: NotifyModalProps) {
                   placeholder="+506 1234-5678"
                   pattern="^\+?[0-9\s().-]+$"
                   title="Use digits and optional +, spaces, parentheses, dots, or dashes."
-                  className="w-full px-4 py-3 bg-[#0c0c10] border border-white/10 rounded-lg text-[#f8f9fa] placeholder:text-[#f8f9fa]/30 focus:outline-none focus:border-[#00f5d4] transition-colors"
+                  className="w-full px-4 py-3 bg-void border border-white/10 rounded-lg text-cream placeholder:text-cream/30 focus:outline-none focus:border-cyber transition-colors"
                 />
               </div>
 
               <div>
                 <label
                   htmlFor="school"
-                  className="block text-sm font-display uppercase tracking-wider text-[#f8f9fa]/50 mb-2"
+                  className="block text-sm font-display uppercase tracking-wider text-cream/50 mb-2"
                 >
-                  School <span className="text-[#f8f9fa]/30">(optional)</span>
+                  School <span className="text-cream/30">(optional)</span>
                 </label>
                 <input
                   type="text"
@@ -201,7 +199,7 @@ export function NotifyModal({ isOpen, onClose }: NotifyModalProps) {
                   value={school}
                   onChange={(e) => setSchool(e.target.value)}
                   placeholder="Your school name"
-                  className="w-full px-4 py-3 bg-[#0c0c10] border border-white/10 rounded-lg text-[#f8f9fa] placeholder:text-[#f8f9fa]/30 focus:outline-none focus:border-[#00f5d4] transition-colors"
+                  className="w-full px-4 py-3 bg-void border border-white/10 rounded-lg text-cream placeholder:text-cream/30 focus:outline-none focus:border-cyber transition-colors"
                 />
               </div>
 
@@ -212,7 +210,7 @@ export function NotifyModal({ isOpen, onClose }: NotifyModalProps) {
               >
                 {isSubmitting ? (
                   <>
-                    <div className="w-5 h-5 border-2 border-[#0c0c10]/30 border-t-[#0c0c10] rounded-full animate-spin" />
+                    <div className="w-5 h-5 border-2 border-void/30 border-t-void rounded-full animate-spin" />
                     Submitting...
                   </>
                 ) : (
@@ -224,17 +222,17 @@ export function NotifyModal({ isOpen, onClose }: NotifyModalProps) {
               </button>
 
               {submitError ? (
-                <p className="text-sm text-[#39ff14] text-center" role="alert">
+                <p className="text-sm text-matrix text-center" role="alert">
                   {submitError}
                 </p>
               ) : null}
             </form>
 
-            <p className="text-xs text-[#f8f9fa]/30 text-center mt-4">
+            <p className="text-xs text-cream/30 text-center mt-4">
               You confirm your agreement to our{" "}
               <a
                 href="/privacy"
-                className="text-[#f8f9fa]/40 hover:text-[#f8f9fa] transition-colors duration-300"
+                className="text-cream/40 hover:text-cream transition-colors duration-300"
               >
                 Privacy Policy
               </a>

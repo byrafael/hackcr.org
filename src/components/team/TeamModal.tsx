@@ -29,7 +29,7 @@ export function TeamModal({ member, isOpen, onClose }: TeamModalProps) {
   }
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4" onClick={onClose}>
+    <div className="fixed inset-0 z-100 flex items-center justify-center p-4" onClick={onClose}>
       <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
 
       <div
@@ -38,14 +38,14 @@ export function TeamModal({ member, isOpen, onClose }: TeamModalProps) {
       >
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-[#f8f9fa]/40 hover:text-[#f8f9fa] transition-colors"
+          className="absolute top-4 right-4 text-cream/40 hover:text-cream transition-colors"
         >
           <X className="w-6 h-6" />
         </button>
 
         <div className="flex gap-6">
           <div
-            className="w-24 h-24 md:w-32 md:h-32 rounded-full flex-shrink-0 flex items-center justify-center text-3xl md:text-4xl font-display font-bold text-[#0c0c10]"
+            className="w-24 h-24 md:w-32 md:h-32 rounded-full shrink-0 flex items-center justify-center text-3xl md:text-4xl font-display font-bold text-void"
             style={{ backgroundColor: member.color }}
           >
             {getAvatarToken(member.name)}
@@ -60,7 +60,7 @@ export function TeamModal({ member, isOpen, onClose }: TeamModalProps) {
               {member.role}
             </p>
 
-            <p className="text-[#f8f9fa]/60 text-sm md:text-base italic mb-6">
+            <p className="text-cream/60 text-sm md:text-base italic mb-6">
               &ldquo;{member.quote}&rdquo;
             </p>
 
@@ -71,7 +71,7 @@ export function TeamModal({ member, isOpen, onClose }: TeamModalProps) {
                     href={member.socials.instagram}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#f8f9fa]/40 hover:text-[#ff9f1c] transition-colors"
+                    className="text-cream/40 hover:text-cyber transition-colors"
                   >
                     <InstagramIcon className="w-5 h-5" />
                   </a>
@@ -81,7 +81,7 @@ export function TeamModal({ member, isOpen, onClose }: TeamModalProps) {
                     href={member.socials.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#f8f9fa]/40 hover:text-[#ff9f1c] transition-colors"
+                    className="text-cream/40 hover:text-cyber transition-colors"
                   >
                     <LinkedInIcon className="w-5 h-5" />
                   </a>
@@ -91,7 +91,7 @@ export function TeamModal({ member, isOpen, onClose }: TeamModalProps) {
                     href={member.socials.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#f8f9fa]/40 hover:text-[#ff9f1c] transition-colors"
+                    className="text-cream/40 hover:text-cyber transition-colors"
                   >
                     <GithubIcon className="w-5 h-5" />
                   </a>
@@ -101,7 +101,7 @@ export function TeamModal({ member, isOpen, onClose }: TeamModalProps) {
                     href={member.socials.website}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#f8f9fa]/40 hover:text-[#ff9f1c] transition-colors"
+                    className="text-cream/40 hover:text-cyber transition-colors"
                   >
                     <Link2 className="w-5 h-5" />
                   </a>

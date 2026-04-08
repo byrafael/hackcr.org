@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 
-interface CocNavigationProps {
+interface TermsNavigationProps {
   scrollY: number;
 }
 
-export function CocNavigation({ scrollY }: CocNavigationProps) {
+export function TermsNavigation({ scrollY }: TermsNavigationProps) {
   return (
     <nav
       className="fixed top-0 left-0 right-0 z-50 px-6 py-4 transition-all duration-300"
@@ -30,7 +30,7 @@ export function CocNavigation({ scrollY }: CocNavigationProps) {
           >
             Team
           </Link>
-          <span className="text-sm font-display uppercase tracking-wider text-cyber">Conduct</span>
+          <span className="text-sm font-display uppercase tracking-wider text-cyber">Terms</span>
         </div>
       </div>
     </nav>

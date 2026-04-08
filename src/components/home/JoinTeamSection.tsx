@@ -9,18 +9,18 @@ export function JoinTeamSection() {
   const directorOpenings = countOpenings(teamMedium);
 
   return (
-    <section className="relative py-24 md:py-32 px-6 border-t border-white/5 bg-[#0c0c10]">
+    <section className="relative py-24 md:py-32 px-6 border-t border-white/5 bg-void">
       <div className="max-w-6xl mx-auto">
         <div className="reveal">
           {/* Section header */}
           <div className="text-center mb-12">
-            <span className="font-mono text-xs uppercase tracking-[0.3em] text-[#9d4edd]">
+            <span className="font-mono text-xs uppercase tracking-[0.3em] text-violet">
               02 / Join The Team
             </span>
             <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mt-6 mb-4">
-              Help us build <span className="text-[#00f5d4]">HackCR</span>
+              Help us build <span className="text-cyber">HackCR</span>
             </h2>
-            <p className="text-lg text-[#f8f9fa]/50 max-w-2xl mx-auto">
+            <p className="text-lg text-cream/50 max-w-2xl mx-auto">
               We&apos;re looking for passionate high school students to join our organizing team. No
               experience needed—just enthusiasm and a willingness to learn.
             </p>
@@ -29,38 +29,36 @@ export function JoinTeamSection() {
           {/* Stats grid */}
           <div className="grid md:grid-cols-3 gap-6 mb-12">
             {/* Co-Leads */}
-            <div className="glass-card p-8 text-center group hover:border-[#39ff14]/30 transition-colors">
-              <div className="font-display text-5xl md:text-6xl font-bold text-[#39ff14] mb-2">
+            <div className="glass-card p-8 text-center group hover:border-matrix/30 transition-colors">
+              <div className="font-display text-5xl md:text-6xl font-bold text-matrix mb-2">
                 {coLeadOpenings}
               </div>
-              <div className="text-xs font-mono uppercase tracking-wider text-[#f8f9fa]/40 mb-2">
+              <div className="text-xs font-mono uppercase tracking-wider text-cream/40 mb-2">
                 Co-Lead Positions
               </div>
-              <p className="text-sm text-[#f8f9fa]/30">
+              <p className="text-sm text-cream/30">
                 Work directly with the founder to shape HackCR
               </p>
             </div>
 
             {/* Directors */}
-            <div className="glass-card p-8 text-center group hover:border-[#b967ff]/30 transition-colors">
-              <div className="font-display text-5xl md:text-6xl font-bold text-[#b967ff] mb-2">
+            <div className="glass-card p-8 text-center group hover:border-violet/30 transition-colors">
+              <div className="font-display text-5xl md:text-6xl font-bold text-violet mb-2">
                 {directorOpenings}
               </div>
-              <div className="text-xs font-mono uppercase tracking-wider text-[#f8f9fa]/40 mb-2">
+              <div className="text-xs font-mono uppercase tracking-wider text-cream/40 mb-2">
                 Director Positions
               </div>
-              <p className="text-sm text-[#f8f9fa]/30">Lead one of our key departments</p>
+              <p className="text-sm text-cream/30">Lead one of our key departments</p>
             </div>
 
             {/* Team Members */}
-            <div className="glass-card p-8 text-center group hover:border-[#00f5d4]/30 transition-colors">
-              <div className="font-display text-5xl md:text-6xl font-bold text-[#00f5d4] mb-2">
-                ∞
-              </div>
-              <div className="text-xs font-mono uppercase tracking-wider text-[#f8f9fa]/40 mb-2">
+            <div className="glass-card p-8 text-center group hover:border-cyber/30 transition-colors">
+              <div className="font-display text-5xl md:text-6xl font-bold text-cyber mb-2">∞</div>
+              <div className="text-xs font-mono uppercase tracking-wider text-cream/40 mb-2">
                 Team Members
               </div>
-              <p className="text-sm text-[#f8f9fa]/30">Join a department and help make it happen</p>
+              <p className="text-sm text-cream/30">Join a department and help make it happen</p>
             </div>
           </div>
 
@@ -77,7 +75,7 @@ export function JoinTeamSection() {
             ].map((dept, i) => (
               <span
                 key={dept}
-                className="px-4 py-2 rounded-full text-sm font-mono border border-white/10 text-[#f8f9fa]/60 hover:border-[#00f5d4]/50 hover:text-[#00f5d4] transition-colors"
+                className="px-4 py-2 rounded-full text-sm font-mono border border-white/10 text-cream/60 hover:border-cyber/50 hover:text-cyber transition-colors"
                 style={{ animationDelay: `${i * 50}ms` }}
               >
                 {dept}
@@ -101,7 +99,7 @@ export function JoinTeamSection() {
                 />
               </svg>
             </a>
-            <p className="text-sm text-[#f8f9fa]/20 mt-4 font-mono">
+            <p className="text-sm text-cream/20 mt-4 font-mono">
               Open to all high school students (ages 13-18)
             </p>
           </div>

@@ -26,11 +26,11 @@ function TimeUnit({ value, label }: { value: number; label: string }) {
   return (
     <div className="flex flex-col items-center">
       <div className="glass-card rounded-lg px-4 py-3 md:px-6 md:py-4 min-w-[70px] md:min-w-[90px]">
-        <span className="font-display text-2xl md:text-4xl font-bold text-[#00f5d4]">
+        <span className="font-display text-2xl md:text-4xl font-bold text-cyber">
           {String(value).padStart(2, "0")}
         </span>
       </div>
-      <span className="text-xs md:text-sm text-[#f8f9fa]/30 mt-2 uppercase tracking-wider font-display">
+      <span className="text-xs md:text-sm text-cream/30 mt-2 uppercase tracking-wider font-display">
         {label}
       </span>
     </div>
@@ -55,11 +55,11 @@ export function CountdownTimer({ targetDate }: CountdownTimerProps) {
   return (
     <div className="flex items-center gap-2 md:gap-4">
       <TimeUnit value={timeLeft.days} label="Days" />
-      <span className="text-2xl md:text-4xl text-[#00f5d4]/20 font-display">:</span>
+      <span className="text-2xl md:text-4xl text-cyber/20 font-display">:</span>
       <TimeUnit value={timeLeft.hours} label="Hours" />
-      <span className="text-2xl md:text-4xl text-[#00f5d4]/20 font-display">:</span>
+      <span className="text-2xl md:text-4xl text-cyber/20 font-display">:</span>
       <TimeUnit value={timeLeft.minutes} label="Mins" />
-      <span className="text-2xl md:text-4xl text-[#00f5d4]/20 font-display">:</span>
+      <span className="text-2xl md:text-4xl text-cyber/20 font-display">:</span>
       <TimeUnit value={timeLeft.seconds} label="Secs" />
     </div>
   );
