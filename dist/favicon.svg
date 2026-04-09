@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="bg3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0c0c10"/>
+      <stop offset="100%" style="stop-color:#1a1a24"/>
+    </linearGradient>
+    <linearGradient id="hGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff9f1c"/>
+      <stop offset="100%" style="stop-color:#e71d36"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background rounded square -->
+  <rect x="5" y="5" width="90" height="90" rx="22" fill="url(#bg3)"/>
+  
+  <!-- Hexagon frame around h -->
+  <path d="M50 15 L78 30 L78 65 L50 80 L22 65 L22 30 Z" 
+        fill="none" 
+        stroke="#ff9f1c" 
+        stroke-width="2" 
+        opacity="0.5"/>
+  
+  <!-- Lowercase h -->
+  <text x="50" y="64"
+        font-family="Chakra Petch, sans-serif"
+        font-size="44"
+        font-weight="700"
+        fill="url(#hGrad)"
+        text-anchor="middle">h</text>
+  
+  <!-- Circuit dots at corners -->
+  <circle cx="50" cy="15" r="3" fill="#ff9f1c"/>
+  <circle cx="78" cy="30" r="3" fill="#e71d36"/>
+  <circle cx="78" cy="65" r="3" fill="#e71d36"/>
+  <circle cx="50" cy="80" r="3" fill="#ff9f1c"/>
+  <circle cx="22" cy="65" r="3" fill="#e71d36"/>
+  <circle cx="22" cy="30" r="3" fill="#ff9f1c"/>
+</svg>

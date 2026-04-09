@@ -1,18 +1,22 @@
 import { HeartHandshake } from "lucide-react";
 
+import { useLanguage } from "../../i18n/LanguageProvider.tsx";
+
 export function SponsorsSection() {
+  const { copy } = useLanguage();
+
   return (
     <section id="sponsors" className="relative py-32 md:py-40 px-6 border-t border-white/5">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16 reveal">
           <span className="font-mono text-xs uppercase tracking-[0.3em] text-violet">
-            04 / Sponsors
+            {copy.home.sponsors.eyebrow}
           </span>
           <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mt-6">
-            Powered by
+            {copy.home.sponsors.heading}
           </h2>
           <p className="text-lg text-cream/40 mt-4 max-w-xl mx-auto">
-            HackCR is made possible by companies that believe in the next generation of builders.
+            {copy.home.sponsors.description}
           </p>
         </div>
 
@@ -20,18 +24,17 @@ export function SponsorsSection() {
           <div className="max-w-2xl mx-auto">
             <div className="text-4xl mb-6">🤝</div>
             <h3 className="font-display text-2xl md:text-3xl font-bold mb-4">
-              We&apos;re looking for sponsors
+              {copy.home.sponsors.cardTitle}
             </h3>
             <p className="text-cream/50 text-lg mb-8 leading-relaxed">
-              Help us make HackCR 2026 unforgettable. Partner with Costa Rica&apos;s first high
-              school hackathon and connect with the next generation of builders.
+              {copy.home.sponsors.cardDescription}
             </p>
             <a
               href="mailto:sponsor@hackcr.org"
               className="btn-primary px-8 py-4 inline-flex items-center gap-2"
             >
               <HeartHandshake className="w-4 h-4" />
-              Become a Sponsor
+              {copy.home.sponsors.cta}
             </a>
           </div>
         </div>

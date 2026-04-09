@@ -1,5 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 
+import { useLanguage } from "../../i18n/LanguageProvider.tsx";
+
 interface CountdownTimerProps {
   targetDate: Date | string;
 }
@@ -38,6 +40,7 @@ function TimeUnit({ value, label }: { value: number; label: string }) {
 }
 
 export function CountdownTimer({ targetDate }: CountdownTimerProps) {
+  const { copy } = useLanguage();
   const target = useMemo(
     () => (targetDate instanceof Date ? targetDate : new Date(targetDate)),
     [targetDate],
@@ -54,13 +57,13 @@ export function CountdownTimer({ targetDate }: CountdownTimerProps) {
 
   return (
     <div className="flex items-center gap-2 md:gap-4">
-      <TimeUnit value={timeLeft.days} label="Days" />
+      <TimeUnit value={timeLeft.days} label={copy.common.countdown.days} />
       <span className="text-2xl md:text-4xl text-cyber/20 font-display">:</span>
-      <TimeUnit value={timeLeft.hours} label="Hours" />
+      <TimeUnit value={timeLeft.hours} label={copy.common.countdown.hours} />
       <span className="text-2xl md:text-4xl text-cyber/20 font-display">:</span>
-      <TimeUnit value={timeLeft.minutes} label="Mins" />
+      <TimeUnit value={timeLeft.minutes} label={copy.common.countdown.mins} />
       <span className="text-2xl md:text-4xl text-cyber/20 font-display">:</span>
-      <TimeUnit value={timeLeft.seconds} label="Secs" />
+      <TimeUnit value={timeLeft.seconds} label={copy.common.countdown.secs} />
     </div>
   );
 }

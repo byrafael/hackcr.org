@@ -1,9 +1,12 @@
 import { Coffee, Heart } from "lucide-react";
 import { Link } from "react-router-dom";
 
+import { useLanguage } from "../../i18n/LanguageProvider.tsx";
 import { GithubIcon, InstagramIcon, XIcon } from "./SocialIcons.tsx";
 
 export function SiteFooter() {
+  const { copy } = useLanguage();
+
   return (
     <footer className="relative py-16 px-6 border-t border-white/5">
       <div className="max-w-7xl mx-auto">
@@ -12,10 +15,7 @@ export function SiteFooter() {
             <div className="font-display text-3xl font-bold tracking-tight mb-4 text-cyber">
               hackcr
             </div>
-            <p className="text-cream/40 max-w-sm mb-6">
-              Costa Rica&apos;s first high school hackathon. November 21-22, 2026 in San José, Costa
-              Rica.
-            </p>
+            <p className="text-cream/40 max-w-sm mb-6">{copy.footer.description}</p>
             <div className="flex items-center gap-4">
               <a
                 href="http://instagram.com/hackcostarica"
@@ -46,7 +46,7 @@ export function SiteFooter() {
           <div className="flex gap-12 md:gap-16 md:text-right">
             <div>
               <h4 className="font-display font-bold mb-4 text-cream/50 text-sm uppercase tracking-wider">
-                Get Involved
+                {copy.footer.getInvolved}
               </h4>
               <ul className="space-y-3">
                 <li>
@@ -54,7 +54,7 @@ export function SiteFooter() {
                     href="/apply/mentor"
                     className="text-cream/30 hover:text-cyber transition-colors duration-300"
                   >
-                    Become a Mentor
+                    {copy.footer.links.mentor}
                   </a>
                 </li>
                 <li>
@@ -62,7 +62,7 @@ export function SiteFooter() {
                     href="/apply/judge"
                     className="text-cream/30 hover:text-cyber transition-colors duration-300"
                   >
-                    Become a Judge
+                    {copy.footer.links.judge}
                   </a>
                 </li>
                 <li>
@@ -70,14 +70,14 @@ export function SiteFooter() {
                     href="/apply"
                     className="text-cream/30 hover:text-cyber transition-colors duration-300"
                   >
-                    Volunteer
+                    {copy.footer.links.volunteer}
                   </a>
                 </li>
               </ul>
             </div>
             <div>
               <h4 className="font-display font-bold mb-4 text-cream/50 text-sm uppercase tracking-wider">
-                Legal
+                {copy.footer.legal}
               </h4>
               <ul className="space-y-3">
                 {/* <li>
@@ -93,7 +93,7 @@ export function SiteFooter() {
                     to="/code-of-conduct"
                     className="text-cream/30 hover:text-cyber transition-colors duration-300"
                   >
-                    Code of Conduct
+                    {copy.footer.links.conduct}
                   </Link>
                 </li>
                 <li>
@@ -101,7 +101,7 @@ export function SiteFooter() {
                     to="/terms"
                     className="text-cream/30 hover:text-cyber transition-colors duration-300"
                   >
-                    Terms of Service
+                    {copy.footer.links.terms}
                   </Link>
                 </li>
                 <li>
@@ -109,7 +109,7 @@ export function SiteFooter() {
                     to="/privacy"
                     className="text-cream/30 hover:text-cyber transition-colors duration-300"
                   >
-                    Privacy Policy
+                    {copy.footer.links.privacy}
                   </Link>
                 </li>
               </ul>
@@ -125,15 +125,15 @@ export function SiteFooter() {
               rel="noopener noreferrer"
               className="text-cream/40 hover:text-cream transition-colors duration-300"
             >
-              rsrdev
+              Rafael Soley
             </a>
-            . All Rights Reserved.
+            . {copy.footer.rights}
           </p>
           <p className="text-sm text-cream/20 flex items-center gap-1.5">
-            Designed with <Heart className="w-3.5 h-3.5 text-rose fill-current" /> and{" "}
-            <Coffee className="w-3.5 h-3.5 text-rose" />.
+            {copy.footer.designedWith} <Heart className="w-3.5 h-3.5 text-rose fill-current" />{" "}
+            {copy.footer.and} <Coffee className="w-3.5 h-3.5 text-rose" />.
           </p>
-          <p className="text-sm text-cream/20">Built by students, for students.</p>
+          <p className="text-sm text-cream/20">{copy.footer.builtBy}</p>
         </div>
       </div>
     </footer>

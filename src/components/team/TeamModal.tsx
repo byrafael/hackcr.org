@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Link2, X } from "lucide-react";
 
+import { useLanguage } from "../../i18n/LanguageProvider.tsx";
 import { GithubIcon, InstagramIcon, LinkedInIcon } from "../common/SocialIcons.tsx";
 import type { TeamMember } from "./types.ts";
 import { getAvatarToken } from "./utils.ts";
@@ -12,6 +13,8 @@ interface TeamModalProps {
 }
 
 export function TeamModal({ member, isOpen, onClose }: TeamModalProps) {
+  const { locale } = useLanguage();
+
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
@@ -57,11 +60,11 @@ export function TeamModal({ member, isOpen, onClose }: TeamModalProps) {
               className="text-sm md:text-base font-mono uppercase tracking-wider mb-4"
               style={{ color: member.color }}
             >
-              {member.role}
+              {member.role[locale]}
             </p>
 
             <p className="text-cream/60 text-sm md:text-base italic mb-6">
-              &ldquo;{member.quote}&rdquo;
+              &ldquo;{member.quote[locale]}&rdquo;
             </p>
 
             {member.socials && (

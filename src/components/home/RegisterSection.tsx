@@ -1,5 +1,6 @@
 import { Bell } from "lucide-react";
 
+import { useLanguage } from "../../i18n/LanguageProvider.tsx";
 import { ParticipationNotice } from "../common/ParticipationNotice.tsx";
 
 interface RegisterSectionProps {
@@ -7,31 +8,31 @@ interface RegisterSectionProps {
 }
 
 export function RegisterSection({ onOpenNotify }: RegisterSectionProps) {
+  const { copy } = useLanguage();
+
   return (
     <section id="register" className="relative py-32 md:py-40 px-6 border-t border-white/5">
       <div className="max-w-5xl mx-auto text-center">
         <div className="reveal">
           <span className="font-mono text-xs uppercase tracking-[0.3em] text-matrix">
-            06 / Register
+            {copy.home.register.eyebrow}
           </span>
           <h2 className="font-display text-5xl md:text-6xl lg:text-8xl font-bold mt-6 mb-8">
-            Ready to build?
+            {copy.home.register.heading}
           </h2>
           <p className="text-lg md:text-xl text-cream/40 max-w-2xl mx-auto mb-12">
-            Join 200 students
-            <ParticipationNotice className="ml-0.5" /> for 24 hours of coding, learning, and
-            creating. Spots are limited.
+            {copy.home.register.bodyBeforeNotice}
+            <ParticipationNotice className="ml-0.5" /> {copy.home.register.bodyAfterNotice}
           </p>
           <button
+            type="button"
             onClick={onOpenNotify}
             className="btn-primary px-12 py-5 text-lg inline-flex items-center gap-3"
           >
             <Bell className="w-5 h-5" />
-            Get Notified
+            {copy.home.register.cta}
           </button>
-          <p className="text-sm text-cream/20 mt-6 font-mono">
-            Registration opens October 1st, 2026
-          </p>
+          <p className="text-sm text-cream/20 mt-6 font-mono">{copy.home.register.footnote}</p>
         </div>
       </div>
     </section>

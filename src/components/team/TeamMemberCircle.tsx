@@ -1,3 +1,4 @@
+import { useLanguage } from "../../i18n/LanguageProvider.tsx";
 import type { TeamMember } from "./types.ts";
 import { getAvatarToken, getInitials } from "./utils.ts";
 
@@ -31,6 +32,7 @@ const sizeConfig = {
 } as const;
 
 export function TeamMemberCircle({ member, size, onSelect }: TeamMemberCircleProps) {
+  const { locale } = useLanguage();
   const config = sizeConfig[size];
 
   return (
@@ -49,7 +51,7 @@ export function TeamMemberCircle({ member, size, onSelect }: TeamMemberCirclePro
         <>
           <h3 className={config.titleClassName}>{member.name}</h3>
           <p className={config.subtitleClassName} style={{ color: member.color }}>
-            {member.role}
+            {member.role[locale]}
           </p>
         </>
       )}

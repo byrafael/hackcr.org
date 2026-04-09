@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
-import { Check, Send, X, CheckCircle } from "lucide-react";
+import { Check, CheckCircle, Send, X } from "lucide-react";
+import { Link } from "react-router-dom";
+
+import { useLanguage } from "../../i18n/LanguageProvider.tsx";
 
 interface NotifyModalProps {
   isOpen: boolean;
@@ -7,10 +10,12 @@ interface NotifyModalProps {
 }
 
 export function NotifyModal({ isOpen, onClose }: NotifyModalProps) {
+  const { copy } = useLanguage();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [school, setSchool] = useState("");
+  const [privacyConsent, setPrivacyConsent] = useState(false);
   const [submitError, setSubmitError] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -35,6 +40,7 @@ export function NotifyModal({ isOpen, onClose }: NotifyModalProps) {
         setEmail("");
         setPhone("");
         setSchool("");
+        setPrivacyConsent(false);
         setSubmitError("");
         setIsSubmitted(false);
         setIsSubmitting(false);
@@ -44,14 +50,14 @@ export function NotifyModal({ isOpen, onClose }: NotifyModalProps) {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!name.trim() || !email.trim()) return;
+    if (!name.trim() || !email.trim() || !privacyConsent) return;
     const normalizedPhone = phone.trim();
 
     if (normalizedPhone) {
       const phoneFormat = /^\+?[0-9\s().-]+$/;
       const digitsOnly = normalizedPhone.replace(/\D/g, "");
       if (!phoneFormat.test(normalizedPhone) || digitsOnly.length < 7 || digitsOnly.length > 15) {
-        setSubmitError("Please enter a valid phone number.");
+        setSubmitError(copy.home.notifyModal.phoneError);
         return;
       }
     }
@@ -74,14 +80,13 @@ export function NotifyModal({ isOpen, onClose }: NotifyModalProps) {
         }),
       });
 
-      const result = (await response.json().catch(() => null)) as { message?: string } | null;
       if (!response.ok) {
-        throw new Error(result?.message || "Could not submit your request right now.");
+        throw new Error(copy.home.notifyModal.requestError);
       }
 
       setIsSubmitted(true);
     } catch (error) {
-      setSubmitError(error instanceof Error ? error.message : "Something went wrong.");
+      setSubmitError(error instanceof Error ? error.message : copy.home.notifyModal.genericError);
     } finally {
       setIsSubmitting(false);
     }
@@ -111,23 +116,26 @@ export function NotifyModal({ isOpen, onClose }: NotifyModalProps) {
             <div className="w-16 h-16 rounded-full bg-cyber/20 flex items-center justify-center mx-auto mb-6">
               <CheckCircle className="w-8 h-8 text-cyber" />
             </div>
-            <h2 className="font-display text-2xl font-bold mb-4">You&apos;re on the list!</h2>
-            <p className="text-cream/60 mb-6">
-              We&apos;ll notify you when registration opens. Stay tuned!
-            </p>
+            <h2 className="font-display text-2xl font-bold mb-4">
+              {copy.home.notifyModal.successTitle}
+            </h2>
+            <p className="text-cream/60 mb-6">{copy.home.notifyModal.successDescription}</p>
             <button
+              type="button"
               onClick={onClose}
               className="btn-primary px-8 py-3 inline-flex items-center gap-2"
             >
               <Check className="w-4 h-4" />
-              Got it
+              {copy.home.notifyModal.successButton}
             </button>
           </div>
         ) : (
           <>
             <div className="text-center mb-8">
-              <h2 className="font-display text-2xl font-bold mb-2">Get Notified</h2>
-              <p className="text-cream/60 text-sm">Be the first to know when registration opens.</p>
+              <h2 className="font-display text-2xl font-bold mb-2">
+                {copy.home.notifyModal.title}
+              </h2>
+              <p className="text-cream/60 text-sm">{copy.home.notifyModal.description}</p>
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-4">
@@ -136,7 +144,7 @@ export function NotifyModal({ isOpen, onClose }: NotifyModalProps) {
                   htmlFor="name"
                   className="block text-sm font-display uppercase tracking-wider text-cream/50 mb-2"
                 >
-                  Name <span className="text-matrix">*</span>
+                  {copy.home.notifyModal.fields.name} <span className="text-matrix">*</span>
                 </label>
                 <input
                   type="text"
@@ -144,7 +152,7 @@ export function NotifyModal({ isOpen, onClose }: NotifyModalProps) {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   required
-                  placeholder="Your full name"
+                  placeholder={copy.home.notifyModal.fields.namePlaceholder}
                   className="w-full px-4 py-3 bg-void border border-white/10 rounded-lg text-cream placeholder:text-cream/30 focus:outline-none focus:border-amber transition-colors"
                 />
               </div>
@@ -154,7 +162,7 @@ export function NotifyModal({ isOpen, onClose }: NotifyModalProps) {
                   htmlFor="email"
                   className="block text-sm font-display uppercase tracking-wider text-cream/50 mb-2"
                 >
-                  Email <span className="text-matrix">*</span>
+                  {copy.home.notifyModal.fields.email} <span className="text-matrix">*</span>
                 </label>
                 <input
                   type="email"
@@ -162,7 +170,7 @@ export function NotifyModal({ isOpen, onClose }: NotifyModalProps) {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
-                  placeholder="your@email.com"
+                  placeholder={copy.home.notifyModal.fields.emailPlaceholder}
                   className="w-full px-4 py-3 bg-void border border-white/10 rounded-lg text-cream placeholder:text-cream/30 focus:outline-none focus:border-cyber transition-colors"
                 />
               </div>
@@ -172,16 +180,17 @@ export function NotifyModal({ isOpen, onClose }: NotifyModalProps) {
                   htmlFor="phone"
                   className="block text-sm font-display uppercase tracking-wider text-cream/50 mb-2"
                 >
-                  Phone <span className="text-cream/30">(optional)</span>
+                  {copy.home.notifyModal.fields.phone}{" "}
+                  <span className="text-cream/30">({copy.home.notifyModal.fields.optional})</span>
                 </label>
                 <input
                   type="tel"
                   id="phone"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
-                  placeholder="+506 1234-5678"
+                  placeholder={copy.home.notifyModal.fields.phonePlaceholder}
                   pattern="^\+?[0-9\s().-]+$"
-                  title="Use digits and optional +, spaces, parentheses, dots, or dashes."
+                  title={copy.home.notifyModal.phoneValidation}
                   className="w-full px-4 py-3 bg-void border border-white/10 rounded-lg text-cream placeholder:text-cream/30 focus:outline-none focus:border-cyber transition-colors"
                 />
               </div>
@@ -191,32 +200,55 @@ export function NotifyModal({ isOpen, onClose }: NotifyModalProps) {
                   htmlFor="school"
                   className="block text-sm font-display uppercase tracking-wider text-cream/50 mb-2"
                 >
-                  School <span className="text-cream/30">(optional)</span>
+                  {copy.home.notifyModal.fields.school}{" "}
+                  <span className="text-cream/30">({copy.home.notifyModal.fields.optional})</span>
                 </label>
                 <input
                   type="text"
                   id="school"
                   value={school}
                   onChange={(e) => setSchool(e.target.value)}
-                  placeholder="Your school name"
+                  placeholder={copy.home.notifyModal.fields.schoolPlaceholder}
                   className="w-full px-4 py-3 bg-void border border-white/10 rounded-lg text-cream placeholder:text-cream/30 focus:outline-none focus:border-cyber transition-colors"
                 />
               </div>
 
+              <div className="flex items-center justify-center gap-3 py-2">
+                <input
+                  type="checkbox"
+                  id="privacyConsent"
+                  checked={privacyConsent}
+                  onChange={(e) => setPrivacyConsent(e.target.checked)}
+                  required
+                  className="w-4 h-4 rounded border-white/20 bg-void text-cyber focus:ring-cyber/50 focus:ring-2"
+                />
+                <label htmlFor="privacyConsent" className="text-sm text-cream/70 leading-relaxed">
+                  {copy.home.notifyModal.privacyConsentBefore}{" "}
+                  <Link
+                    to="/privacy"
+                    className="text-cyber hover:underline"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    {copy.home.notifyModal.privacyConsentLink}
+                  </Link>
+                  .
+                </label>
+              </div>
+
               <button
                 type="submit"
-                disabled={isSubmitting || !name.trim() || !email.trim()}
+                disabled={isSubmitting || !name.trim() || !email.trim() || !privacyConsent}
                 className="w-full btn-primary py-4 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? (
                   <>
                     <div className="w-5 h-5 border-2 border-void/30 border-t-void rounded-full animate-spin" />
-                    Submitting...
+                    {copy.home.notifyModal.submitting}
                   </>
                 ) : (
                   <>
                     <Send className="w-5 h-5" />
-                    Notify Me
+                    {copy.home.notifyModal.submit}
                   </>
                 )}
               </button>
@@ -227,17 +259,6 @@ export function NotifyModal({ isOpen, onClose }: NotifyModalProps) {
                 </p>
               ) : null}
             </form>
-
-            <p className="text-xs text-cream/30 text-center mt-4">
-              You confirm your agreement to our{" "}
-              <a
-                href="/privacy"
-                className="text-cream/40 hover:text-cream transition-colors duration-300"
-              >
-                Privacy Policy
-              </a>
-              .
-            </p>
           </>
         )}
       </div>

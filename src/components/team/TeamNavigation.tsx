@@ -1,10 +1,14 @@
 import { Link } from "react-router-dom";
 
+import { useLanguage } from "../../i18n/LanguageProvider.tsx";
+
 interface TeamNavigationProps {
   scrollY: number;
 }
 
 export function TeamNavigation({ scrollY }: TeamNavigationProps) {
+  const { copy } = useLanguage();
+
   return (
     <nav
       className="fixed top-0 left-0 right-0 z-50 px-6 py-4 transition-all duration-300"
@@ -22,9 +26,11 @@ export function TeamNavigation({ scrollY }: TeamNavigationProps) {
             to="/"
             className="text-sm font-display uppercase tracking-wider text-cream/50 hover:text-cyber transition-colors duration-300"
           >
-            Home
+            {copy.common.nav.home}
           </Link>
-          <span className="text-sm font-display uppercase tracking-wider text-cyber">Team</span>
+          <span className="text-sm font-display uppercase tracking-wider text-cyber">
+            {copy.common.nav.team}
+          </span>
         </div>
       </div>
     </nav>

@@ -1,39 +1,40 @@
+import { useLanguage } from "../../i18n/LanguageProvider.tsx";
 import { ParticipationNotice } from "../common/ParticipationNotice.tsx";
 
 export function AboutSection() {
+  const { copy } = useLanguage();
+
   return (
     <section id="about" className="relative py-32 md:py-40 px-6">
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           <div className="reveal">
             <span className="font-mono text-xs uppercase tracking-[0.3em] text-matrix">
-              01 / About
+              {copy.home.about.eyebrow}
             </span>
             <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mt-6 mb-8 leading-[1.1]">
-              Build the
+              {copy.home.about.titleBeforeAccent}
               <br />
-              <span className="text-cyber">future</span> in 24 hours
+              <span className="text-cyber">{copy.home.about.titleAccent}</span>{" "}
+              {copy.home.about.titleAfterAccent}
             </h2>
             <p className="text-lg text-cream/50 leading-relaxed mb-6">
-              HackCR is Costa Rica&apos;s first high school hackathon, bringing together 200+
-              students for a weekend of innovation. Whether you&apos;re writing your first line of
-              code or deploying your tenth app, this is where you level up.
+              {copy.home.about.descriptionOne}
             </p>
             <p className="text-lg text-cream/50 leading-relaxed mb-10">
-              Join workshops, network with industry mentors, and turn ideas into working prototypes.
-              You don&apos;t need any experience, just curiosity and a laptop.
+              {copy.home.about.descriptionTwo}
             </p>
             <div className="grid grid-cols-3 gap-8">
               <div>
                 <div className="font-display text-4xl md:text-5xl font-bold text-cyber">24h</div>
                 <div className="text-xs font-mono uppercase tracking-wider text-cream/30 mt-1">
-                  Of hacking
+                  {copy.home.about.stats.hacking}
                 </div>
               </div>
               <div>
                 <div className="font-display text-4xl md:text-5xl font-bold text-matrix">200+</div>
                 <div className="text-xs font-mono uppercase tracking-wider text-cream/30 mt-1 flex items-start gap-1">
-                  Hackers
+                  {copy.home.about.stats.hackers}
                   <ParticipationNotice />
                 </div>
               </div>
@@ -54,18 +55,16 @@ export function AboutSection() {
                     <p>
                       <span className="terminal-prompt">$</span> whoami
                     </p>
-                    <p className="mb-4 text-cream/40">high_school_innovator</p>
+                    <p className="mb-4 text-cream/40">{copy.home.about.terminal.identity}</p>
                     <p>
                       <span className="terminal-prompt">$</span> cat mission.txt
                     </p>
-                    <p className="mb-4 text-cream/40">
-                      Empower students to build the future through code, creativity, and community.
-                    </p>
+                    <p className="mb-4 text-cream/40">{copy.home.about.terminal.mission}</p>
                     <p>
                       <span className="terminal-prompt">$</span> ls tracks/
                     </p>
-                    <p className="text-cream/40">AI_&_ML/ Web_Dev/ OpenClaw/ Game_Dev/ Mobile/</p>
-                    <p className="mb-4 text-cream/40">Social_Good/ Cybersecurity/</p>
+                    <p className="text-cream/40">{copy.home.about.terminal.tracksLineOne}</p>
+                    <p className="mb-4 text-cream/40">{copy.home.about.terminal.tracksLineTwo}</p>
                     <p>
                       <span className="terminal-prompt">$</span>{" "}
                       <span className="animate-pulse">_</span>

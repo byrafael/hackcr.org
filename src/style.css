@@ -270,3 +270,32 @@
     linear-gradient(90deg, rgba(0, 245, 212, 0.03) 1px, transparent 1px);
   background-size: 60px 60px;
 }
+
+/* Styled hyperlinks for legal content */
+.link-styled {
+  color: var(--color-cyber);
+  text-decoration: none;
+  position: relative;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.link-styled::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: linear-gradient(90deg, var(--color-cyber), var(--color-matrix));
+  transition: width 0.3s ease;
+}
+
+.link-styled:hover {
+  color: var(--color-cream);
+  text-shadow: 0 0 12px rgba(0, 245, 212, 0.4);
+}
+
+.link-styled:hover::after {
+  width: 100%;
+}
