@@ -31,6 +31,8 @@ export function SponsorsSection() {
             </p>
             <a
               href="mailto:sponsor@hackcr.org"
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn-primary px-8 py-4 inline-flex items-center gap-2"
             >
               <HeartHandshake className="w-4 h-4" />
@@ -43,6 +45,8 @@ export function SponsorsSection() {
           <div className="h-px w-12 bg-white/10" />
           <a
             href="mailto:sponsor@hackcr.org"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-cream/30 hover:text-cyber transition-colors text-sm font-mono"
           >
             sponsor@hackcr.org

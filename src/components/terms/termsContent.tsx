@@ -494,6 +494,8 @@ export const termsContent: Record<Locale, TermsContentData> = {
             If you have questions about these Terms, please contact us at:{" "}
             <a
               href={`mailto:${contactEmail}`}
+              target="_blank"
+              rel="noopener noreferrer"
               className="ml-2 inline-flex items-center gap-1.5 rounded border border-cyber/30 bg-cyber/10 px-2 py-0.5 font-mono text-xs text-cyber transition-all duration-300 hover:border-cyber/50 hover:bg-cyber/20"
             >
               {contactEmail}
@@ -994,6 +996,8 @@ export const termsContent: Record<Locale, TermsContentData> = {
             Si tienes preguntas sobre estos Términos, contáctanos en:{" "}
             <a
               href={`mailto:${contactEmail}`}
+              target="_blank"
+              rel="noopener noreferrer"
               className="ml-2 inline-flex items-center gap-1.5 rounded border border-cyber/30 bg-cyber/10 px-2 py-0.5 font-mono text-xs text-cyber transition-all duration-300 hover:border-cyber/50 hover:bg-cyber/20"
             >
               {contactEmail}

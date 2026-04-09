@@ -125,6 +125,8 @@ export function PrivacyContentSection() {
             <p className="mx-auto mb-6 max-w-lg text-cream/60">{content.contactDescription}</p>
             <a
               href="mailto:legal@hackcr.org"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-lg border border-cyber/30 bg-cyber/10 px-6 py-3 font-mono text-sm tracking-wide text-cyber transition-all duration-300 hover:scale-[1.02] hover:border-cyber/50 hover:bg-cyber/20"
             >
               <Mail className="h-4 w-4" />

@@ -83,6 +83,8 @@ export function JoinTeamSection() {
           <div className="text-center">
             <a
               href="/apply"
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn-primary px-10 py-4 text-base inline-flex items-center gap-3"
             >
               <span>{copy.home.joinTeam.cta}</span>

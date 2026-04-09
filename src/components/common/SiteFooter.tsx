@@ -19,18 +19,24 @@ export function SiteFooter() {
             <div className="flex items-center gap-4">
               <a
                 href="http://instagram.com/hackcostarica"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-cream/40 hover:text-cyber transition-colors duration-300"
               >
                 <InstagramIcon className="w-5 h-5" />
               </a>
               <a
                 href="https://github.com/HackCostaRica"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-cream/40 hover:text-cyber transition-colors duration-300"
               >
                 <GithubIcon className="w-5 h-5" />
               </a>
               <a
                 href="https://x.com/hackcostarica"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-cream/40 hover:text-cyber transition-colors duration-300"
               >
                 <XIcon className="w-5 h-5" />
@@ -52,6 +58,8 @@ export function SiteFooter() {
                 <li>
                   <a
                     href="/apply/mentor"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-cream/30 hover:text-cyber transition-colors duration-300"
                   >
                     {copy.footer.links.mentor}
@@ -60,6 +68,8 @@ export function SiteFooter() {
                 <li>
                   <a
                     href="/apply/judge"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-cream/30 hover:text-cyber transition-colors duration-300"
                   >
                     {copy.footer.links.judge}
@@ -68,6 +78,8 @@ export function SiteFooter() {
                 <li>
                   <a
                     href="/apply"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-cream/30 hover:text-cyber transition-colors duration-300"
                   >
                     {copy.footer.links.volunteer}

@@ -155,6 +155,8 @@ export const cocContent: Record<Locale, CocContentData> = {
               email at any time, at{" "}
               <a
                 href={`mailto:${conductEmail}`}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 rounded border border-cyber/30 bg-cyber/10 px-2 py-0.5 font-mono text-xs text-cyber transition-all duration-300 hover:border-cyber/50 hover:bg-cyber/20"
               >
                 {conductEmail}
@@ -342,6 +344,8 @@ export const cocContent: Record<Locale, CocContentData> = {
               posible. También puedes escribirnos en cualquier momento a{" "}
               <a
                 href={`mailto:${conductEmail}`}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 rounded border border-cyber/30 bg-cyber/10 px-2 py-0.5 font-mono text-xs text-cyber transition-all duration-300 hover:border-cyber/50 hover:bg-cyber/20"
               >
                 {conductEmail}

@@ -43,6 +43,8 @@ export const privacyContent: Record<Locale, PrivacyContentData> = {
           Email:{" "}
           <a
             href={`mailto:${contactEmail}`}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 rounded border border-cyber/30 bg-cyber/10 px-2 py-0.5 font-mono text-xs text-cyber transition-all duration-300 hover:border-cyber/50 hover:bg-cyber/20"
           >
             {contactEmail}
@@ -194,6 +196,8 @@ export const privacyContent: Record<Locale, PrivacyContentData> = {
               at:{" "}
               <a
                 href={`mailto:${contactEmail}`}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="ml-2 inline-flex items-center gap-1.5 rounded border border-cyber/30 bg-cyber/10 px-2 py-0.5 font-mono text-xs text-cyber transition-all duration-300 hover:border-cyber/50 hover:bg-cyber/20"
               >
                 {contactEmail}
@@ -362,6 +366,8 @@ export const privacyContent: Record<Locale, PrivacyContentData> = {
               To exercise these rights, contact us at:{" "}
               <a
                 href={`mailto:${contactEmail}`}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="ml-2 inline-flex items-center gap-1.5 rounded border border-cyber/30 bg-cyber/10 px-2 py-0.5 font-mono text-xs text-cyber transition-all duration-300 hover:border-cyber/50 hover:bg-cyber/20"
               >
                 {contactEmail}
@@ -422,6 +428,8 @@ export const privacyContent: Record<Locale, PrivacyContentData> = {
             <p>
               <a
                 href={`mailto:${contactEmail}`}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 rounded border border-cyber/30 bg-cyber/10 px-2 py-0.5 font-mono text-xs text-cyber transition-all duration-300 hover:border-cyber/50 hover:bg-cyber/20"
               >
                 {contactEmail}
@@ -463,6 +471,8 @@ export const privacyContent: Record<Locale, PrivacyContentData> = {
           Correo:{" "}
           <a
             href={`mailto:${contactEmail}`}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 rounded border border-cyber/30 bg-cyber/10 px-2 py-0.5 font-mono text-xs text-cyber transition-all duration-300 hover:border-cyber/50 hover:bg-cyber/20"
           >
             {contactEmail}
@@ -623,6 +633,8 @@ export const privacyContent: Record<Locale, PrivacyContentData> = {
               escribiéndonos a:{" "}
               <a
                 href={`mailto:${contactEmail}`}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="ml-2 inline-flex items-center gap-1.5 rounded border border-cyber/30 bg-cyber/10 px-2 py-0.5 font-mono text-xs text-cyber transition-all duration-300 hover:border-cyber/50 hover:bg-cyber/20"
               >
                 {contactEmail}
@@ -798,6 +810,8 @@ export const privacyContent: Record<Locale, PrivacyContentData> = {
               Para ejercer estos derechos, contáctanos en:{" "}
               <a
                 href={`mailto:${contactEmail}`}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="ml-2 inline-flex items-center gap-1.5 rounded border border-cyber/30 bg-cyber/10 px-2 py-0.5 font-mono text-xs text-cyber transition-all duration-300 hover:border-cyber/50 hover:bg-cyber/20"
               >
                 {contactEmail}
@@ -862,6 +876,8 @@ export const privacyContent: Record<Locale, PrivacyContentData> = {
             <p>
               <a
                 href={`mailto:${contactEmail}`}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 rounded border border-cyber/30 bg-cyber/10 px-2 py-0.5 font-mono text-xs text-cyber transition-all duration-300 hover:border-cyber/50 hover:bg-cyber/20"
               >
                 {contactEmail}
